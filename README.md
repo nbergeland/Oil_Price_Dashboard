@@ -9,3 +9,6 @@ Rationale: COVID-19 / Oil Prices of late,  coupled with interest in seeing the m
 Datasets: Provided in the repository.
 
 <img src="us-states-by-population.png" width="60%">
+
+
+Sketch of Final Design: A dashboard
