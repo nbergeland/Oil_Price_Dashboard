@@ -6,6 +6,7 @@ Topic: The United States gas market over time.
 	
 Rationale: COVID-19 / Oil Prices of late,  coupled with interest in seeing the market of an essential good over time.
 
+<<<<<<< HEAD
 Datasets: Provided in the repository.
 
 <img src="us-states-by-population.png" width="60%">
@@ -13,3 +14,6 @@ Datasets: Provided in the repository.
 
 
 Sketch of Final Design: A dashboard
+=======
+<img src="us-states-by-population.png" width="60%">
+>>>>>>> 3f4c31a... Create README.md
