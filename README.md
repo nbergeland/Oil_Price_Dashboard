@@ -6,4 +6,6 @@ Topic: The United States gas market over time.
 	
 Rationale: COVID-19 / Oil Prices of late,  coupled with interest in seeing the market of an essential good over time.
 
+Datasets: Provided in the repository.
+
 <img src="us-states-by-population.png" width="60%">
