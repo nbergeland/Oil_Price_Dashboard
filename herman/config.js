@@ -1,2 +1,0 @@
-var eia_api_key="e31ef8468ea824124145c1740d7014b4"
-
