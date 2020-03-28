@@ -18,7 +18,7 @@ d3.csv("data/Crude_oil_reserve.csv").then((importedData) => {
   for (let i = 0; data.length > i;i++){
       y_list.push(data[i]['U.S. Crude Oil Proved Reserves (Million Barrels)']);
   }
-console.log(y_list);
+//console.log(y_list);
 
   var trace1 = {
     x: x_list,
