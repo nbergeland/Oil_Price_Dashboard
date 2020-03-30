@@ -1,15 +1,25 @@
 // Initializes the page with a default plot
 function init() {
     var trace1 = {
-        labels: ["Alaska", "California", "Colorado", "Gulf of Mexico", "New Mexico", "North Dakota",
-            "Oklahoma", "Texas", "Wyoming", "Rest of US"],
-        values: [2977, 2779, 2609, 9761, 3709, 7121, 3186, 24971, 1362, 3821],
-        type: 'pie'
+      type: 'pie',
+      marker: {
+        line: {
+          color: '#000000',
+          width: 1
+        },
+        colors: ['#F9EDB3', '#FFC428', '#FF7987', '#FF2371', '#FFA07A', '#7FFFD4', '#FF7F50', '#BA55D3', '#90EE90', '#6495ED']
+      },
+      textfont: {size: 20},
+      textinfo: 'percent', 
+      hoverinfo: 'label+value',
+      labels: ["Alaska", "California", "Colorado", "Gulf of Mexico", "New Mexico", "North Dakota",
+      "Oklahoma", "Texas", "Wyoming", "Rest of US"],
+      values: [2977, 2779, 2609, 9761, 3709, 7121, 3186, 24971, 1362, 3821],
     };
     data = [trace1];
 
     var layout = {
-        title: "US Crude Oil Production",
+        title: "US Crude Oil Production (Thousand Barrels per Day)",
     };
   
     Plotly.newPlot("pie_chart_dropdown_plot", data, layout);
