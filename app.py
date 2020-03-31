@@ -45,9 +45,14 @@ oil_price_data.insert_many([oil_prices])
 @app.route("/")
 def index():
     returned_data  = list(oil_price_data.find())
-    print(returned_data)
+    if returned_data[0]['change']<0:
+        color = 'red'
+    elif returned_data[0]['change']>0:
+        color = 'green'
+    else:
+        color = 'black'
     # render an index.html template and pass it the data you retrieved from the database
-    return render_template("index.html", oil_price=returned_data[0]['price'], oil_chage=returned_data[0]['change'])
+    return render_template("index.html", oil_price=returned_data[0]['price'], oil_chage=returned_data[0]['change'], percent = returned_data[0]['change']/returned_data[0]['price']*100, color=color)
 
 # @app.route('/scrape')
 # def scrape_update():
