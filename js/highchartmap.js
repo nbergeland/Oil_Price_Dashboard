@@ -1,4 +1,4 @@
-Highcharts.chart('container', {
+Highcharts.chart('highchart_oil_map', {
     chart: {
         type: 'tilemap',
         inverted: true,
