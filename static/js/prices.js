@@ -28,7 +28,7 @@ var chartGroup = svg.append("g")
 var parseTime = d3.timeParse("%m/%d/%Y");
 
 // Load data from forcepoints.csv
-d3.csv("data/HistPrices.csv").then(function(forceData){
+d3.csv("/static/data/HistPrices.csv").then(function(forceData){
 
   // Print the forceData
 //  console.log(forceData);
