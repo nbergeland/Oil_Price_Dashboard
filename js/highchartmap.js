@@ -1,4 +1,4 @@
-Highcharts.chart('highchart_oil_map', {
+Highcharts.chart('container', {
     chart: {
         type: 'tilemap',
         inverted: true,
@@ -6,7 +6,7 @@ Highcharts.chart('highchart_oil_map', {
     },
 
     accessibility: {
-        description: 'A tile map represents US Oil Production in 2018. The hexagonal tiles are positioned to geographically echo the map of the USA. A color-coded legend states the population levels as below 1 million (beige), 1 to 5 million (orange), 5 to 20 million (pink) and above 20 million (hot pink). The chart is interactive, and the individual state data points are displayed upon hovering. Three states have a population of above 20 million: California (39.3 million), Texas (27.9 million) and Florida (20.6 million). The northern US region from Massachusetts in the Northwest to Illinois in the Midwest contains the highest concentration of states with a population of 5 to 20 million people. The southern US region from South Carolina in the Southeast to New Mexico in the Southwest contains the highest concentration of states with a population of 1 to 5 million people. 6 states have a population of less than 1 million people; these include Alaska, Delaware, Wyoming, North Dakota, South Dakota and Vermont. The state with the lowest population is Wyoming in the Northwest with 584,153 people.',
+        description: 'A tile map represents US Oil Production in 2018. The hexagonal tiles are positioned to geographically echo the map of the USA.',
         screenReaderSection: {
             beforeChartFormat:
                 '<h5>{chartTitle}</h5>' +
@@ -24,7 +24,7 @@ Highcharts.chart('highchart_oil_map', {
     },
 
     subtitle: {
-        text: 'Source:<a href="https://simple.wikipedia.org/wiki/List_of_U.S._states_by_population">Wikipedia</a>'
+        text: '(In the first six months)'
     },
 
     xAxis: {
@@ -38,23 +38,29 @@ Highcharts.chart('highchart_oil_map', {
     colorAxis: {
         dataClasses: [{
             from: 0,
-            to: 4,
+            to: 0,
             color: '#F9EDB3',
-            name: '< 5 TBPD'
-        }, {
-            from: 5,
+            name: '0 TBPD'
+        },  {
+            from: 1, 
             to: 49,
-            color: '#FFC428',
-            name: '5 TBPD - 49 TBPD'
-        }, {
+            color: '#FFA07A',
+            name: '1 TBPD - 49 TBPD'
+        },
+            {
             from: 50,
-            to: 499,
-            color: '#FF7987',
-            name: '50 TBPD - 499 TBPD'
+            to: 299,
+            color: '#FFC428',
+            name: '50 TBPD - 299 TBPD'
         }, {
-            from: 500,
+            from: 300,
+            to: 1999,
+            color: '#FF7987',
+            name: '300 TBPD - 1999 TBPD'
+        }, {
+            from: 2000,
             color: '#FF2371',
-            name: '> 500 TBPD'
+            name: '> 2000 TBPD'
         }]
     },
 
@@ -84,14 +90,14 @@ Highcharts.chart('highchart_oil_map', {
             region: 'South',
             x: 6,
             y: 7,
-            value: 16
+            value: 99
         }, {
             'hc-a2': 'AK',
             name: 'Alaska',
             region: 'West',
             x: 0,
             y: 0,
-            value: 451
+            value: 2977
         }, {
             'hc-a2': 'AZ',
             name: 'Arizona',
@@ -105,21 +111,21 @@ Highcharts.chart('highchart_oil_map', {
             region: 'South',
             x: 5,
             y: 6,
-            value: 14
+            value: 84
         }, {
             'hc-a2': 'CA',
             name: 'California',
             region: 'West',
             x: 5,
             y: 2,
-            value: 462
+            value: 2779
         }, {
             'hc-a2': 'CO',
             name: 'Colorado',
             region: 'West',
             x: 4,
             y: 3,
-            value: 423
+            value: 2609
         }, {
             'hc-a2': 'CT',
             name: 'Connecticut',
@@ -140,14 +146,14 @@ Highcharts.chart('highchart_oil_map', {
             region: 'South',
             x: 8,
             y: 7,
-            value: 1658
+            value: 9761
         }, {
             'hc-a2': 'FL',
             name: 'Florida',
             region: 'South',
             x: 8,
             y: 8,
-            value: 5
+            value: 30
         }, {
             'hc-a2': 'GA',
             name: 'Georgia',
@@ -161,7 +167,7 @@ Highcharts.chart('highchart_oil_map', {
             region: 'West',
             x: 8,
             y: 0,
-            value: 15
+            value: 90
         }, {
             'hc-a2': 'ID',
             name: 'Idaho',
@@ -175,14 +181,14 @@ Highcharts.chart('highchart_oil_map', {
             region: 'Midwest',
             x: 3,
             y: 6,
-            value: 23
+            value: 133
         }, {
             'hc-a2': 'IN',
             name: 'Indiana',
             region: 'Midwest',
             x: 3,
             y: 7,
-            value: 5
+            value: 28
         }, {
             'hc-a2': 'IA',
             name: 'Iowa',
@@ -196,7 +202,7 @@ Highcharts.chart('highchart_oil_map', {
             region: 'Midwest',
             x: 5,
             y: 5,
-            value: 96
+            value: 576
         }, {
             'hc-a2': 'KY',
             name: 'Kentucky',
@@ -210,7 +216,7 @@ Highcharts.chart('highchart_oil_map', {
             region: 'South',
             x: 6,
             y: 5,
-            value: 129
+            value: 771
         }, {
             'hc-a2': 'ME',
             name: 'Maine',
@@ -238,7 +244,7 @@ Highcharts.chart('highchart_oil_map', {
             region: 'Midwest',
             x: 2,
             y: 7,
-            value: 15
+            value: 86
         }, {
             'hc-a2': 'MN',
             name: 'Minnesota',
@@ -252,7 +258,7 @@ Highcharts.chart('highchart_oil_map', {
             region: 'South',
             x: 6,
             y: 6,
-            value: 47
+            value: 282
         }, {
             'hc-a2': 'MO',
             name: 'Missouri',
@@ -266,21 +272,21 @@ Highcharts.chart('highchart_oil_map', {
             region: 'West',
             x: 2,
             y: 2,
-            value: 52
+            value: 325
         }, {
             'hc-a2': 'NE',
             name: 'Nebraska',
             region: 'Midwest',
             x: 4,
             y: 4,
-            value: 5
+            value: 31
         }, {
             'hc-a2': 'NV',
             name: 'Nevada',
             region: 'West',
             x: 4,
             y: 2,
-            value: 1
+            value: 6
         }, {
             'hc-a2': 'NH',
             name: 'New Hampshire',
@@ -301,14 +307,14 @@ Highcharts.chart('highchart_oil_map', {
             region: 'West',
             x: 6,
             y: 3,
-            value: 657
+            value: 3709
         }, {
             'hc-a2': 'NY',
             name: 'New York',
             region: 'Northeast',
             x: 2,
             y: 9,
-            value: 1
+            value: 6
         }, {
             'hc-a2': 'NC',
             name: 'North Carolina',
@@ -322,21 +328,21 @@ Highcharts.chart('highchart_oil_map', {
             region: 'Midwest',
             x: 2,
             y: 3,
-            value: 1220
+            value: 7121
         }, {
             'hc-a2': 'OH',
             name: 'Ohio',
             region: 'Midwest',
             x: 3,
             y: 8,
-            value: 65
+            value: 335
         }, {
             'hc-a2': 'OK',
             name: 'Oklahoma',
             region: 'South',
             x: 6,
             y: 4,
-            value: 526
+            value: 3186
         }, {
             'hc-a2': 'OR',
             name: 'Oregon',
@@ -350,7 +356,7 @@ Highcharts.chart('highchart_oil_map', {
             region: 'Northeast',
             x: 3,
             y: 9,
-            value: 18
+            value: 109
         }, {
             'hc-a2': 'RI',
             name: 'Rhode Island',
@@ -371,28 +377,28 @@ Highcharts.chart('highchart_oil_map', {
             region: 'Midwest',
             x: 3,
             y: 4,
-            value: 4
+            value: 23
         }, {
             'hc-a2': 'TN',
             name: 'Tennessee',
             region: 'South',
             x: 5,
             y: 7,
-            value: 1
+            value: 6
         }, {
             'hc-a2': 'TX',
             name: 'Texas',
             region: 'South',
             x: 7,
             y: 4,
-            value: 4410
+            value: 24971
         }, {
             'hc-a2': 'UT',
             name: 'Utah',
             region: 'West',
             x: 5,
             y: 4,
-            value: 94
+            value: 598
         }, {
             'hc-a2': 'VT',
             name: 'Vermont',
@@ -420,7 +426,7 @@ Highcharts.chart('highchart_oil_map', {
             region: 'South',
             x: 4,
             y: 7,
-            value: 30
+            value: 172
         }, {
             'hc-a2': 'WI',
             name: 'Wisconsin',
@@ -434,7 +440,7 @@ Highcharts.chart('highchart_oil_map', {
             region: 'West',
             x: 3,
             y: 3,
-            value: 226
+            value: 1362
         }]
     }]
 });
