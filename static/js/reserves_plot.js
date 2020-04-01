@@ -1,6 +1,6 @@
 // Use D3 fetch to read the JSON file
 // The data from the JSON file is arbitrarily named importedData as the argument
-d3.csv("data/Crude_oil_reserve.csv").then((importedData) => {
+d3.csv("static/data/Crude_oil_reserve.csv").then((importedData) => {
   // console.log(importedData);
   var data = importedData;
 
