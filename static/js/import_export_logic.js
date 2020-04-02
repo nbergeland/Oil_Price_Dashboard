@@ -59,10 +59,9 @@ d3.json(export_url).then(function(data) {
       var plot_data = [trace2, trace1];
     
       Plotly.newPlot("import_export_plot", plot_data, layout);
-    });
-    
-
+    }); 
 });
+
 
 // var import_x=[];
 // var import_y=[];

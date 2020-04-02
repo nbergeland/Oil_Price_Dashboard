@@ -117,6 +117,8 @@ function updatePlotly() {
 
   } Plotly.newplot("x", "y");
 
+
+
 // // Create forceData
 // date = forceData.Date
 // close = forceData.Close
