@@ -25,7 +25,7 @@ d3.json(export_url).then(function(data) {
       mode: 'lines+markers',
       name: "Crude exports",
       line: {
-        color: "navy"
+        color: "#FF2371"
       }
     };
 
@@ -52,7 +52,7 @@ d3.json(export_url).then(function(data) {
         mode: 'lines+markers',
         name: "Crude imports",
         line: {
-          color: "crimson"
+          color: "#FFC428"
         }
       };
     

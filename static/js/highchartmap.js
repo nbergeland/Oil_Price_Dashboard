@@ -145,7 +145,7 @@ Highcharts.chart('highchart_oil_map', {
             name: 'Federal Offshore Gulf of Mexico Crude Oil',
             region: 'South',
             x: 8,
-            y: 7,
+            y: 6,
             value: 9761
         }, {
             'hc-a2': 'FL',
