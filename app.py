@@ -54,6 +54,11 @@ def index():
     # render an index.html template and pass it the data you retrieved from the database
     return render_template("index.html", oil_price=returned_data[0]['price'], oil_chage=returned_data[0]['change'], percent = returned_data[0]['change']/returned_data[0]['price']*100, color=color)
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+
 # @app.route('/scrape')
 # def scrape_update():
 #     try:
