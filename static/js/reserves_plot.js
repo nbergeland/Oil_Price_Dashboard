@@ -24,7 +24,10 @@ d3.csv("static/data/Crude_oil_reserve.csv").then((importedData) => {
     x: x_list,
     y: y_list,
     type:"line",
-    name: "test"
+    name: "test",
+    line: {
+      color: '#FFA07A'
+    }
   };
   
 
