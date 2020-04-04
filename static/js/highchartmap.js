@@ -2,7 +2,8 @@ Highcharts.chart('highchart_oil_map', {
     chart: {
         type: 'tilemap',
         inverted: true,
-        height: '80%'
+        height: '80%',
+        backgroundColor: 'transparent'
     },
 
     accessibility: {
@@ -81,7 +82,7 @@ Highcharts.chart('highchart_oil_map', {
             }
         }
     },
-
+    
     series: [{
         name: '',
         data: [{
