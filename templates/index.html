@@ -18,104 +18,121 @@
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-          <h1 class="display-2">
-            Oil Dashboard
-        </h1>
+          <h1 class="display-2"> Oil Dashboard </h1>
             <!--
                 <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
             -->
-            </div>
-      </div>
-<div class="dashboard">
-    <div class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-6">
-                    <div class="box">
-                        <div id="plot"></div>    
+        </div>
+    </div>
+    <div class="dashboard">
+
+
+        <div class="spacer30"></div>
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <div class="box">
+                            <div id="plot"></div>    
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-6">
-                    <div class="box" >
-                        <div id="import_export_plot"></div>    
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <div class="box" >
+                            <div id="import_export_plot"></div>    
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!--
-        <div id="highchart_oil_map" style="width:100%; height:1000px;"></div>
-    -->
-    <div class="spacer10"></div>
+        <!--
+            <div id="highchart_oil_map" style="width:100%; height:1000px;"></div>
+        -->
+
+        <div class="spacer30"></div>
 
 
-    <div class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-12 col-md-6">
-                    <div class="box">
-                        <div id="highchart_oil_map"></div>
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="box">
+                            <div id="highchart_oil_map"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-12 col-md-6 text-center">
-                    <div class="box">
-                        <div id="pie_chart_dropdown_plot"></div>
-                        <select id="selDataset">
-                        <option value="2018">2018</option>
-                        <option value="2017">2017</option>
-                        <option value="2016">2016</option>
-                        <option value="2015">2015</option>
-                        <option value="2014">2014</option>
-                        <option value="2013">2013</option>
-                        <option value="2012">2012</option>
-                        <option value="2011">2011</option>
-                        <option value="2010">2010</option>
-                        <option value="2009">2009</option>
-                        <option value="2008">2008</option>
-                        </select>
+                    <div class="col-sm-12 col-md-6 text-center">
+                        <div class="box">
+                            <div id="pie_chart_dropdown_plot"></div>
+                            <select id="selDataset">
+                            <option value="2018">2018</option>
+                            <option value="2017">2017</option>
+                            <option value="2016">2016</option>
+                            <option value="2015">2015</option>
+                            <option value="2014">2014</option>
+                            <option value="2013">2013</option>
+                            <option value="2012">2012</option>
+                            <option value="2011">2011</option>
+                            <option value="2010">2010</option>
+                            <option value="2009">2009</option>
+                            <option value="2008">2008</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <div class="spacer10"></div>
+        
+        <div class="spacer30"></div>
 
-    <div class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-12 col-md-8">
-                    <div class="box">
-                        <div class="svg-container">
-                            <div id="price_plot"></div>
-                        </div>                 
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12 col-md-8">
+                        <div class="box">
+                            <div class="svg-container">
+                                <div id="price_plot"></div>
+                            </div>                 
+                        </div>
                     </div>
-                 </div>
-
-                 <div class="col-sm-12 col-md-3">
+                    <div class="col-sm-12 col-md-3">
                         <div class="box ">
-                        <h2  style="font-size:2vw;" >Oil Futures May 20</h2>
-                       <p style="font-size:2vw;" >
-                          Price: {{oil_price}} <br> Change: <font color="{{color}}"> {{oil_chage}} </font>,  <font color="{{color}}"> ({{percent}}%) </font>
+                            <h2  style="font-size:2vw;" >Oil Futures May 20</h2>
+                            <p style="font-size:2vw;">
+                                Price: {{oil_price}} <br> Change: <font color="{{color}}"> {{oil_chage}} </font>,  <font color="{{color}}"> ({{percent}}%) </font>
                             </p>
-                    </div>                     
-                 </div>
-            </div>                
+                        </div>                     
+                    </div>
+                </div>                
+            </div>
+        </div>
+        <div class="spacer30"></div>
+    </div>
+
+    </div>
+<!--   
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+-->
+                    <div class="aboutBlock">
+                            <p>
+                                <a href="/about" target="_blank">About this dashboard</a>
+                            </p>
+                            <p>
+                                <a href="https://unsplash.com/photos/GrmwVnVSSdU" target="_blank">Background image by Zbynek Burival </a> 
+                            </p>
+                            <p>
+                                <a style="color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@zburival?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Zbynek Burival"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Zbynek Burival</span></a>
+                            </p>
+                    </div>
+<!--
+                </div>
+            </div>
         </div>
     </div>
-
-</div>
-<div class="spacer10"></div>
-
-
-    <div class="about_block">
-        <a href="/about" target="_blank">About this dashboard</a>
-        <p>
-            <a href="https://unsplash.com/photos/GrmwVnVSSdU" target="_blank">Background image by Zbynek Burival </a>  
-        </p>
-        <a style="color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@zburival?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Zbynek Burival"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Zbynek Burival</span></a>
-    </div>
-
-    
+-->
+   
     <script src="static/js/config.js"></script>
 
     <script src="static/js/prices.js"></script>
