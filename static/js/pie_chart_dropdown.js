@@ -20,7 +20,9 @@ function init() {
 
     var layout = {
         title: "US Crude Oil Production (Thousand Barrels per Day)",
-    };
+        paper_bgcolor: 'rgba(0,0,0,0)',
+        plot_bgcolor: 'rgba(0,0,0,0)'
+    };      
   
     Plotly.newPlot("pie_chart_dropdown_plot", data, layout);
   }
