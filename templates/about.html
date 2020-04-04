@@ -14,30 +14,63 @@
    <div style="font-size:1vw;" class="col-sm-12 col-md-3"></div>
    <div style="font-size:1vw;" class="col-sm-12 col-md-6">
  
-<!--
-      <h3> Main components</h3>
-
-      <h4> Reserves line graph </h4>
-
-      <h4> Oil Imports and Exports Line Graph </h4>
-
-      <h4> Tilemap </h4>
-
-      <h4> Pie Chart </h4>
-
-      <h4> Tilemap </h4>
-
-      <h4> Price Plot </h4>
-
-      <h4> Oil Futures Price Data </h4>
--->
-
       <h3>Motivation </h3>
     For this dashboard, we wanted to dive into important aspects of the crude oil market here in the US. 
     This includes the historic price per barrel, the proven reserves, the amount of exports and imports, and the production of crude oil in the US. 
     We were curious to observe, to whatever extent possible, the effects of the coronavirus and Saudi Arabia's increased production on the US crude oil market. 
     The early returns of the data show a rather precipitous decline in US crude oil exports with a matching decline in crude oil prices.
     This early data and general world events portend a disasterous year for US crude oil producers, but are encouraging trends for the motorist.
+
+      <h3> Main components</h3>
+         The dashboard consists of eight main components and is served using a flask app.  Most of the data was sourced from the Energy Information Administration (EIA).
+      <h4> Reserves line graph </h4>
+         The reserves linegraph was created using plotly in the <mark>reserves_plot.js</mark> file.  D3 is used to open a CSV from the EIA.  The lines of code below are used to make the plot's size 
+         fit in the container it is placed in.
+         <pre><code>
+         window.onresize = function() {
+            Plotly.Plots.resize("plot");
+            Plotly.Plots.resize("import_export_plot");
+          };
+         </code></pre>
+
+
+      <h4> Oil Imports and Exports Line Graph </h4>
+
+         The oil imports and exports line graph was also created using plotly.  An API call is used within  <mark>import_export.js</mark> to collect JSON data from EIA.  Date formats of the form 20200402 are munged to 2020-03-02 using the lines of code below.
+         <pre><code>
+         my_string = data["series"][0]["data"][i][0];
+         import_x.push(new Date(my_string.substring(0,4)+'-'+my_string.substring(4,6)+'-'+my_string.substring(6,9)));
+         import_y.push(data["series"][0]["data"][i][1]);
+         </code></pre>
+         The layout parameters below make the graph transparant.
+         <pre><code>
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            plot_bgcolor: 'rgba(0,0,0,0)'
+         </code></pre>
+      <h4> Tilemap </h4>
+         The tile map was made using the highcharts javascript library.  The following lines in <mark>highchartmap.js</mark> added the tooltip hover text.
+         <pre><code>
+         tooltip: {
+            headerFormat: '',
+            pointFormat: 'The oil production of <b> {point.name}</b> is <b>{point.value}</b> thousand barrels per day'
+        },
+      </code></pre>
+      <h4> Pie Chart </h4>
+         The pie chart was made using plotly.  In <mark>pie_chart_dropdown.js</mark>, the following line with the function updatePlotly allow the user to interact with the data by selecting the year.
+         <pre><code>
+            d3.selectAll("#selDataset").on("change", updatePlotly);
+         </code></pre>
+
+      <h4> Price Plot </h4>
+         The price plot is an svg graphic that is created using javascript and D3.  The price is plotted relative to the downward trendline in prices.  The code is in the <mark>prices.js</mark> file.
+      <h4> Oil Futures Price Data </h4>
+         The oil futures price data is gathered using a flask app, <mark>app.py</mark>.  Yahoo finance is called and the app prints the data using the html snipet below in the index.html template.
+         <pre><code>
+            &lt;p style="font-size:2vw;"&gt;
+               Price: &#123;&#123;oil_price&#125;&#125; &lt;br&gt; Change: &lt;font color="&#123;&#123;color&#125;&#125;"&gt; &#123;&#123;oil_chage&#125;&#125; &lt;/font&gt;,  &lt;font color="&#123;&#123;color&#125;&#125;"&gt; (&#123;&#123;percent&#125;&#125;%) &lt;/font&gt;
+               &lt;/p&gt;
+         </code></pre>
+
 
    <h3> Conclusions </h3>
     
