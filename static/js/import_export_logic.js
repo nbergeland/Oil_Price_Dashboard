@@ -32,7 +32,9 @@ d3.json(export_url).then(function(data) {
     var layout = {
       title: "Oil Imports and Exports",
       xaxis: { title: "Date" },
-      yaxis: { title: "Thousands of barrels" }
+      yaxis: { title: "Thousands of barrels" },
+      paper_bgcolor: 'rgba(0,0,0,0)',
+      plot_bgcolor: 'rgba(0,0,0,0)'
     };
 
     var import_x=[];
