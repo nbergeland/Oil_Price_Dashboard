@@ -42,7 +42,9 @@ d3.csv("static/data/Crude_oil_reserve.csv").then((importedData) => {
       r: 100,
       t: 100,
       b: 100
-    }
+    },
+    paper_bgcolor: 'rgba(0,0,0,0)',
+    plot_bgcolor: 'rgba(0,0,0,0)'
   };
 
   // Render the plot to the div tag with id "plot"
