@@ -52,5 +52,4 @@ d3.csv("static/data/Crude_oil_reserve.csv").then((importedData) => {
 window.onresize = function() {
   Plotly.Plots.resize("plot");
   Plotly.Plots.resize("import_export_plot");
-  };
 };
