@@ -13,7 +13,7 @@ def get_price():
     today = date.today()
     query_date = today - timedelta(days=4)
     query_date_string = str(query_date.year)+'-'+str(query_date.month)+'-'+str(query_date.day)
-    stock_data_df = yf.download("CMG", start=query_date_string, group_by="ticker")
+    stock_data_df = yf.download("CL=F", start=query_date_string, group_by="ticker")
     closing_price = stock_data_df.iloc[stock_data_df.shape[0]-1]['Close']
     change = closing_price - stock_data_df.iloc[stock_data_df.shape[0]-1]['Open']
     return [closing_price,change]
@@ -52,7 +52,7 @@ def index():
     else:
         color = 'black'
     # render an index.html template and pass it the data you retrieved from the database
-    return render_template("index.html", oil_price=returned_data[0]['price'], oil_chage=returned_data[0]['change'], percent = returned_data[0]['change']/returned_data[0]['price']*100, color=color)
+    return render_template("index.html", oil_price=round(returned_data[0]['price'],3), oil_chage=round(returned_data[0]['change'],3), percent = round(returned_data[0]['change']/returned_data[0]['price']*100,3), color=color)
 
 @app.route("/about")
 def about():
